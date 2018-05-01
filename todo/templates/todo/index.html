@@ -5,6 +5,7 @@
     <title>To Do List</title>
 
     {% load static %}
+    <link rel="stylesheet" href="{% static 'css/todo.css' %}">
   </head>
   <body ng-app="toDo" ng-controller="toDoController">
     <h1>To Do List</h1>
@@ -15,12 +16,12 @@
     </form>
     <br>
 
-    <div ng-repeat="todo in todoList">
+    <div class="todo-list" ng-repeat="todo in todoList">
       <input type="checkbox" ng-model="todo.done"><span ng-bind="todo.todoText"></span>
     </div>
 
     <p>
-      <button ng-click="remove()">Done</button>
+      <button class="done" ng-click="remove()">Done</button>
     </p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
